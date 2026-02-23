@@ -1,0 +1,16 @@
+body {font-family: sans-serif}
+
+p, a, li {color: blue;}
+
+a:hover {color: red;}
+
+ul li {font-style: italic}
+
+/* This is a comment */
+.int-link {
+  font-weight: bolder;
+  font-family: serif
+}
+ 
+#mail-link {font-size: 1.5em}
+
