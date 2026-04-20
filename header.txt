@@ -1,0 +1,43 @@
+<div id="preheader">
+    <h1>Stamp Site Worldwide</h1>
+  </div>
+  <div id="nav-menu">
+    <div id="nav-home" class="nav-div">
+      <a href="/web-dev/">Home</a>
+    </div>
+    <div id="nav-photos" class="nav-div">
+      <a href="#">Photos</a>
+      <ul class="nav-list">
+        <li><a href="#">Photo page 1</a></li>
+        <li><a href="#">Photo page 2</a></li>
+        <li><a href="#">Photo page 3</a></li>
+      </ul>
+    </div>
+  
+    <div id="nav-poetry" class="nav-div">
+      <a href="#">Poetry</a>
+      <ul class="nav-list">
+        <li><a href="#">Poetry page 1</a></li>
+        <li><a href="#">Poetry page 2</a></li>
+        <li><a href="#">Poetry page 3</a></li>
+      </ul>
+    </div>
+  
+    <div id="nav-movies" class="nav-div">
+      <a href="#">Movies</a>
+      <ul class="nav-list">
+        <li><a href="#">Movies page 1</a></li>
+        <li><a href="#">Movies page 2</a></li>
+        <li><a href="#">Movies page 3</a></li>
+      </ul>
+    </div>
+  
+    <div id="nav-wd" class="nav-div">
+      <a href="./wdsub/">Web Dev</a>
+      <ul class="nav-list">
+        <li><a href="#">Web Dev page 1</a></li>
+        <li><a href="#">Web Dev page 2</a></li>
+        <li><a href="#">Web Dev page 3</a></li>
+      </ul>
+    </div>
+  </div>
