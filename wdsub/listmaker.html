@@ -1,0 +1,28 @@
+<!DCOTYPE html>
+<html>
+  <head>
+    <title>List Maker App</title>
+    <link rel="stylesheet" href="listmaker.css">
+  </head>
+  <body>
+    <script src="/web-dev/headerinjection.js"></script>
+    <div id="heading-div">
+      <h1>List Maker</h1>
+    </div>
+    
+    <div id="content">
+      <div id="input-grp">
+        <label for="item-input">New Item:</label>
+        <input id="item-input" type="text">
+        <button onclick="addItem(event)">Add Item</button>
+        <button onclick="clearList(event)">Clear List</button>
+      </div>
+      <div id="list-grp">
+        <ul id="list">
+          
+        </ul>
+      </div>
+    </div>
+    <script src="listmaker.js"></script>
+  </body>
+</html>
