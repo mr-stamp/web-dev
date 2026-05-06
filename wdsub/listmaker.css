@@ -1,0 +1,18 @@
+
+li button {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.trash-btn {
+  display: none;
+}
+
+li:hover .trash-btn {
+  display: inline;
+}
