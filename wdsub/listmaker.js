@@ -63,7 +63,7 @@ function clearList(event) {
     let _key = _item.split("=")[0];
     let _value = _item.split("=")[1];
     if (_key.substr(0,4) == "item") {
-      document.cookie = _key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = _key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     }
   }
   
@@ -80,7 +80,7 @@ function deleteItem(elem) {
     let _key = _item.split("=")[0];
     let _value = _item.split("=")[1];
     if (_key.substr(0,4) == "item" && _value == textToDel) {
-      document.cookie = _key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = _key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
       break;
     }
   }
