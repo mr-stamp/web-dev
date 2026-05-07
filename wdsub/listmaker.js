@@ -4,14 +4,13 @@ const UNCHECK_BOX = "<button onclick='checkItem(this)'><svg viewBox='0 0 448 512
 
 let itemInput = document.querySelector("#item-input");
 let list = document.getElementById("list");
-loadList();
-document.addEventListener("beforeunload", () => saveList());
+let numItems = 0;
+loadOldList();
 
 document.addEventListener("keydown", (key) => {
   if (key.code == "Enter") addItem(key);
 });
 
-//FUNCTION DEFINITIONS
 function addItem(event) {
   if (itemInput.value != "") {
     let _newItemText = itemInput.value;
@@ -24,18 +23,47 @@ function addItem(event) {
 
     //Add new list item to list
     list.append(_elem);
+    numItems++;
+    
+    
+    //Save cookie for next time
+    saveItem(itemInput.value);
 
     itemInput.value = "";
     itemInput.focus();
   }
 }
 
+function autoAddItem(str) {
+  if (typeof str !== "undefined") {
+    let _newItemText = str;
+    //Create new list item element
+    let _elem = document.createElement("li");
+
+    //Set the content and attributes of the new list item
+    _elem.innerText = _newItemText;
+    _elem.innerHTML = UNCHECK_BOX + _elem.innerHTML + TRASH_BUTTON;
+
+    //Add new list item to list
+    list.append(_elem);
+    numItems++;
+    
+    //Save cookie for next time
+    saveItem(str);
+  }
+}
+
+
 function clearList(event) {
   list.innerHTML = "";
+  
+  //TODO: delete all cookies
 }
 
 function deleteItem(elem) {
-  elem.parentElement.remove(); 
+  elem.parentElement.remove();
+  
+  //TODO: delete specific cookie
 }
 
 function checkItem(elem) {
@@ -52,14 +80,18 @@ function uncheckItem(elem) {
   parentLI.innerHTML = UNCHECK_BOX + parentLI.innerText + TRASH_BUTTON;
 }
 
-function saveList() {
-  document.cookie = "list=" + list.innerHTML + "; max-age=31536000000";
-  console.log("cookie is: " + document.cookie);
+function loadOldList() {
+  cookieArr = document.cookie.split(";");
+  
+  for (let _item in cookieArr) {
+    let _key = _item.split("=")[0];
+    let _value = _item.split("=")[1];
+    if (_key.substr(0,4) == "item" && typeof _value !== "undefined") {
+      autoAddItem(_value);
+    }
+  }
 }
 
-function loadList() {
-  let oldList = document.cookie.substring(5);
-  if (oldList != "") list.innerHTML = oldList;
+function saveItem(str) {
+  document.cookie = "item" + numItems + "=" + str;
 }
-
-
