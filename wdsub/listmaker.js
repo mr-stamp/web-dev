@@ -82,14 +82,13 @@ function uncheckItem(elem) {
 
 function loadOldList() {
   cookieArr = document.cookie.split(";");
-  
-  for (let _item in cookieArr) {
+  cookieArr.foreach((_item) => {
     let _key = _item.split("=")[0];
     let _value = _item.split("=")[1];
     if (_key.substr(0,4) == "item" && typeof _value !== "undefined") {
       autoAddItem(_value);
     }
-  }
+  });
 }
 
 function saveItem(str) {
