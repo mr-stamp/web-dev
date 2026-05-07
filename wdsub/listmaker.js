@@ -72,7 +72,7 @@ function clearList(event) {
 
 function deleteItem(elem) {  
   //Delete specific cookie
-  let textToDel = elem.previousElementSibling.innerText;
+  let textToDel = elem.parentElement.innerText;
   cookieArr = document.cookie.split("; ");
     
   for (let _i = 0; _i < cookieArr.length; _i++) {
