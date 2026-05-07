@@ -59,6 +59,7 @@ function clearList(event) {
   cookieArr = document.cookie.split("; ");
   
   for (let _i = 0; _i < cookieArr.length; _i++) {
+    let _item = cookieArr[_i];
     let _key = _item.split("=")[0];
     let _value = _item.split("=")[1];
     if (_key.substr(0,4) == "item") {
@@ -75,6 +76,7 @@ function deleteItem(elem) {
   cookieArr = document.cookie.split("; ");
     
   for (let _i = 0; _i < cookieArr.length; _i++) {
+    let _item = cookieArr[_i];
     let _key = _item.split("=")[0];
     let _value = _item.split("=")[1];
     if (_key.substr(0,4) == "item" && _value == textToDel) {
