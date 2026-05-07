@@ -55,15 +55,35 @@ function autoAddItem(str) {
 
 
 function clearList(event) {
-  list.innerHTML = "";
+  //Delete all cookies
+  cookieArr = document.cookie.split("; ");
   
-  //TODO: delete all cookies
+  for (let _i = 0; _i < cookieArr.length; _i++) {
+    let _key = _item.split("=")[0];
+    let _value = _item.split("=")[1];
+    if (_key.substr(0,4) == "item") {
+      document.cookie = _key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+  }
+  
+  list.innerHTML = "";
 }
 
-function deleteItem(elem) {
-  elem.parentElement.remove();
+function deleteItem(elem) {  
+  //Delete specific cookie
+  let textToDel = elem.previousElementSibling.innerText;
+  cookieArr = document.cookie.split("; ");
+    
+  for (let _i = 0; _i < cookieArr.length; _i++) {
+    let _key = _item.split("=")[0];
+    let _value = _item.split("=")[1];
+    if (_key.substr(0,4) == "item" && _value == textToDel) {
+      document.cookie = _key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      break;
+    }
+  }
   
-  //TODO: delete specific cookie
+  elem.parentElement.remove();
 }
 
 function checkItem(elem) {
@@ -82,16 +102,7 @@ function uncheckItem(elem) {
 
 function loadOldList() {
   cookieArr = document.cookie.split("; ");
-  
-  // for (let _i = 0; _i < cookieArr.length; _i++) {
-  //   let _item = cookieArr[_i];
-  //   let _key = _item.split("=")[0];
-  //   let _value = _item.split("=")[1];
-  //   if (_key.substr(0,4) == "item" && typeof _value !== "undefined") {
-  //     autoAddItem(_value);
-  //   }
-  // }
-  
+    
   cookieArr.forEach((_item) => {
     let _key = _item.split("=")[0];
     let _value = _item.split("=")[1];
