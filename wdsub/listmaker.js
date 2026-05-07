@@ -53,7 +53,7 @@ function uncheckItem(elem) {
 }
 
 function saveList() {
-  document.cookie = "list=" + list.innerHTML;
+  document.cookie = "list=" + list.innerHTML + "; max-age=31536000000";
   console.log("cookie is: " + document.cookie);
 }
 
