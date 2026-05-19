@@ -1,0 +1,29 @@
+body {
+  margin: 0px;
+  font-family: Geo, serif;
+}
+
+h1 {
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+  font-family: Tourney, sans-serif;
+  font-size: 2.5rem;
+}
+
+#content {
+  padding: 10px;
+}
+
+#input-grp {
+  font-family: Tourney, sans-serif;
+  width: 50%;
+  margin: 20px auto;
+}
+
+#input-grp button {
+  display: inline-block;
+  width: 50px;
+  font-family: Tourney;
+  font-weight: 900;
+}
