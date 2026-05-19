@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Normal Form Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normal-form-styles.css">
+  </head>
+  <body>
+    <h1>Normal Form Calculator</h1>
+    
+    <div id="content">
+      <p>
+        This applet takes a two-player game in normal form and computes pure-strategy Nash Equilibria using Iterated Elimination of Dominated Strategies (IEDS).
+      </p>
+      <p>
+        To use the calculator, begin by entering the number of pure strategies available to player 1 and the number of pure strategies available to player 2. Then press <i>Go</i>. On the next screen, enter the payoff pairs for each outcome and press <i>Compute</i>.
+      </p>
+      <div id="input-grp">
+        <label for="p1-strats">Number of Pure Strats for P1:</label>
+        <input id="p1-strats" type="number" value="2" min="1">
+        <br>
+        <br>
+        <label for="p2-strats">Number of Pure Strats for P2:</label>
+        <input id="p2-strats" type="number" value="2" min="1">
+        <br>
+        <br>
+        <button id="go" onclick="goToMatrix()">Go</button>
+      </div>
+
+      <script>
+        function goToMatrix() {
+          let p1Strats = document.getElementById("p1-strats").value;
+          let p2Strats = document.getElementById("p2-strats").value;
+          navigation.navigate("matrix.html?p1Strats=" + p1Strats + "&p2Strats=" + p2Strats);
+        }
+      </script>
+    </div>
+
+    
+  </body>
+</html>
