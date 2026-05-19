@@ -28,15 +28,15 @@
         <br>
         <button id="go" onclick="goToMatrix()">Go</button>
       </div>
-
-      <script>
-        function goToMatrix() {
-          let p1Strats = document.getElementById("p1-strats").value;
-          let p2Strats = document.getElementById("p2-strats").value;
-          navigation.navigate("matrix.html?p1Strats=" + p1Strats + "&p2Strats=" + p2Strats);
-        }
-      </script>
     </div>
+
+    <script>
+      function goToMatrix() {
+        let p1Strats = document.getElementById("p1-strats").value;
+        let p2Strats = document.getElementById("p2-strats").value;
+        navigation.navigate("matrix.html?p1Strats=" + p1Strats + "&p2Strats=" + p2Strats);
+      }
+    </script>
 
     
   </body>
