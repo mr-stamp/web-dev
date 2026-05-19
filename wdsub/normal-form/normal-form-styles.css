@@ -27,3 +27,26 @@ h1 {
   font-family: Tourney;
   font-weight: 900;
 }
+
+#matrix {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+  width: 800px;
+  margin: 30px auto;
+}
+
+#matrix > div {
+  flex-grow: 1;
+  height: 30px;
+}
+
+#matrix > div > div {
+  border: solid black 3px;
+  text-align: center;
+  min-height: 30px;
+}
+
+input {
+  width: 40px;
+}
