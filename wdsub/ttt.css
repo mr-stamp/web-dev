@@ -1,0 +1,116 @@
+body {
+  margin: 0px;
+}
+
+#header {
+  text-align: center;
+  margin: 15px auto;
+  font-family: 'Nerko One';
+  font-size: 2.5rem;
+}
+
+#header h1 {
+  margin: 0px;
+}
+
+#turn-tracker {
+  font-family: 'Nerko One', sans-serif;
+  width: 200px;
+  margin: 10px auto;
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#symbol {
+  font-family: 'Permanent Marker', sans-serif;
+}
+
+div.ttt-row {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+  width: 75%;
+  margin: auto;
+  max-width: 500px;
+}
+
+div.ttt-square {
+  flex-grow: 1;
+  border: 3px solid black;
+  border-bottom: 0px;
+  min-height: 120px;
+  max-height: 120px;
+  width: 30%;
+  font-size: 5rem;
+  font-family: 'Permanent Marker', sans-serif;
+  text-align: center;
+}
+
+div.ttt-bottom {
+  border-bottom: 3px solid black;
+}
+
+#scoreboard {
+  position: fixed;
+  top: 200px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  padding: 10px;
+  font-family: 'Permanent Marker';
+  text-align: center;
+}
+
+#x-score {
+  float: left;
+  width: 10%;
+  background-color: rgba(0,0,0,0.4);
+  padding: 5px;
+  min-height: 100px;
+  border-radius: 10px;
+}
+
+#o-score {
+  float: right;
+  width: 10%;
+  background-color: rgba(0,0,0,0.4);
+  padding: 5px;
+  min-height: 100px;
+  border-radius: 10px;
+}
+
+#x-score p:first-child, #o-score p:first-child {
+  text-decoration: solid black underline 3px;
+}
+
+#end-of-game {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999;
+  display: none;
+  font-family: 'Nerko One';
+}
+
+#end-of-game div {
+  background-color: white;
+  width: 50%;
+  max-width: 400px;
+  margin: 200px auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+
+#end-of-game button {
+  font-family: 'Nerko One';
+  font-size: 1.2rem;
+  border-width: 3px;
+  border-radius: 6px;
+}
