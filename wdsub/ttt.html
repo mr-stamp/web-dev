@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Nerko+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ttt.css">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Tic-Tac-Toe</h1>
+    </div>
+    <div id="turn-tracker">
+      <span id="symbol">X</span>'s Turn
+    </div>
+    <div id="game">
+      <div class="ttt-row">
+        <div class="ttt-square"></div>
+        <div class="ttt-square"></div>
+        <div class="ttt-square"></div>
+      </div>
+      <div class="ttt-row">
+        <div class="ttt-square"></div>
+        <div class="ttt-square"></div>
+        <div class="ttt-square"></div>
+      </div>
+      <div class="ttt-row">
+        <div class="ttt-square ttt-bottom"></div>
+        <div class="ttt-square ttt-bottom"></div>
+        <div class="ttt-square ttt-bottom"></div>
+      </div>
+    </div>
+    
+    <div id="scoreboard">
+      <div id="x-score">
+        <p>X score:</p>
+        <p>0</p>
+      </div>
+      <div id="o-score">
+        <p>O score:</p>
+        <p>0</p>
+      </div>
+    </div>
+    
+    <div id="end-of-game">
+      <div>
+        <p>🎉X Player Wins!🎉</p>
+        <button onclick="resetGame()">Play Again</button>
+      </div>
+    </div>
+
+    <script src="ttt.js"></script>
+    
+  </body>
+</html>
+
+
+
+
