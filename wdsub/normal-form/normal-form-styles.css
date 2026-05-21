@@ -21,30 +21,38 @@ h1 {
   margin: 20px auto;
 }
 
-#input-grp button {
-  display: inline-block;
-  width: 50px;
+button {
   font-family: Tourney;
   font-weight: 900;
 }
 
+#input-grp button {
+  display: inline-block;
+  width: 50px;
+}
+
 #matrix {
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: space-evenly;
   width: 800px;
   margin: 30px auto;
 }
 
 #matrix > div {
-  flex-grow: 1;
-  height: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 40px;
 }
 
 #matrix > div > div {
+  flex: 1 1 0;
   border: solid black 3px;
   text-align: center;
-  min-height: 30px;
+  min-height: 40px;
+}
+
+.payoff-pair {
+  display: block;
+  align-content: center;
+  height: 100%;
 }
 
 input {
