@@ -1,7 +1,7 @@
 let urlParams = new URLSearchParams(window.location.search);
 const P1_STRATS = urlParams.get("p1Strats");
 const P2_STRATS = urlParams.get("p2Strats");
-const CELL_CONTENTS = "(<input type='number'>, <input type='number'>)";
+const CELL_CONTENTS = "<span class='payoff-pair'>(<input type='number'>, <input type='number'>)</span>";
 
 buildMatrix();
 
@@ -10,21 +10,21 @@ buildMatrix();
 function buildMatrix() {
   const MATRIX = document.getElementById("matrix");
   
-  for (let i = -1; i < P2_STRATS; i++) {
+  for (let i = -1; i < P1_STRATS; i++) {
     let newRow = document.createElement("div");
     MATRIX.append(newRow);
     
-    for (let j = -1; j < P1_STRATS; j++) {
+    for (let j = -1; j < P2_STRATS; j++) {
       let newCell = document.createElement("div");
       if (i >= 0 && j >= 0) {
-        newRow.setAttribute("class", "payoff-cell");
+        newCell.setAttribute("class", "payoff-cell");
         newCell.innerHTML = CELL_CONTENTS;
       } else if (i >= 0) {
-        newRow.setAttribute("class", "strat-cell");
-        newCell.innerHTML = "t<sub>" + (i + 1) + "</sub>";
+        newCell.setAttribute("class", "strat-cell");
+        newCell.innerHTML = "s<sub>" + (i + 1) + "</sub>";
       } else if (j >= 0) {
-        newRow.setAttribute("class", "strat-cell");
-        newCell.innerHTML = "s<sub>" + (j + 1) + "</sub>";
+        newCell.setAttribute("class", "strat-cell");
+        newCell.innerHTML = "t<sub>" + (j + 1) + "</sub>";
       }
       
       newRow.append(newCell);
@@ -54,6 +54,9 @@ function computeDSE() {
     p2Elim[i] = false;
   }
   
+  for (let i = 0; i < p1PayArr.length; i++) {
+    
+  }
   
   
   
