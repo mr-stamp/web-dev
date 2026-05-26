@@ -66,12 +66,12 @@ function computeNE() {
     
     //Identify the largest payoff to player 2 in the ith row
     for (let j = 0; j < P2_STRATS; j++) {
-      if (p2PayArr[P2_STRATS*i + j] > largestT) largestT = Number(p2PayArr[P2_STRATS*i + j]);
+      if (Number(p2PayArr[P2_STRATS*i + j]) > largestT) largestT = Number(p2PayArr[P2_STRATS*i + j]);
     }
     
     //If a payoff is equal to the greatest in this row, mark it as a best response
     for (let j = 0; j < P2_STRATS; j++) {
-      if (p2PayArr[P2_STRATS*i + j] >= largestT) p2Best[P2_STRATS*i + j] = true;
+      if (Number(p2PayArr[P2_STRATS*i + j]) >= largestT) p2Best[P2_STRATS*i + j] = true;
     }
   }
   
@@ -81,12 +81,12 @@ function computeNE() {
     
     //Identify the largest payoff to player 1 in the jth column
     for (let i = 0; i < P1_STRATS; i++) {
-      if (p1PayArr[P2_STRATS*i + j] > largestS) largestS = Number(p1PayArr[P2_STRATS*i + j]);
+      if (Number(p1PayArr[P2_STRATS*i + j]) > largestS) largestS = Number(p1PayArr[P2_STRATS*i + j]);
     }
     
     //If a payoff is equal to the greatest in this column, mark it as a best response
     for (let i = 0; i < P1_STRATS; i++) {
-      if (p1PayArr[P2_STRATS*i + j] >= largestS) p1Best[P2_STRATS*i + j] = true;
+      if (Number(p1PayArr[P2_STRATS*i + j]) >= largestS) p1Best[P2_STRATS*i + j] = true;
     }
   }
   
