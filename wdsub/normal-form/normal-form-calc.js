@@ -63,7 +63,7 @@ function computeNE() {
   }
   
   //Go through each row of the matrix, comparing player 2's payoffs
-  for (let i = 0; i < p1PayArr.length; i++) {
+  for (let i = 0; i < P1_STRATS; i++) {
     let largestT = -Infinity;
     
     //Identify the largest payoff to player 2 in the ith row
@@ -78,17 +78,17 @@ function computeNE() {
   }
   
   //Go through each column of the matrix, comparing player 1's payoffs
-  for (let j = 0; j < p2PayArr.length; j++) {
+  for (let j = 0; j < P2_STRATS; j++) {
     let largestS = -Infinity;
     
     //Identify the largest payoff to player 1 in the jth column
     for (let i = 0; i < P1_STRATS; i++) {
-      if (p1PayArr[P1_STRATS*j + i] > largestS) largestS = p1PayArr[P1_STRATS*j + i];
+      if (p1PayArr[P2_STRATS*i + j] > largestS) largestS = p1PayArr[P2_STRATS*i + j];
     }
     
     //If a payoff is equal to the greatest in this column, mark it as a best response
     for (let i = 0; i < P1_STRATS; i++) {
-      if (p1PayArr[P1_STRATS*j + i] >= largestS) p1Best[P1_STRATS*j + i] = true;
+      if (p1PayArr[P2_STRATS*i + j] >= largestS) p1Best[P2_STRATS*i + j] = true;
     }
   }
   
