@@ -1,9 +1,7 @@
 //UNCOMMENT TO GET PARAMS FROM LANDING PAGE
-// let urlParams = new URLSearchParams(window.location.search);
-// const P1_STRATS = urlParams.get("p1Strats");
-// const P2_STRATS = urlParams.get("p2Strats");
-const P1_STRATS = 3;
-const P2_STRATS = 2;
+let urlParams = new URLSearchParams(window.location.search);
+const P1_STRATS = urlParams.get("p1Strats");
+const P2_STRATS = urlParams.get("p2Strats");
 const CELL_CONTENTS = "<span class='payoff-pair'>(<input type='number' value='0'>, <input type='number' value='0'>)</span>";
 
 buildMatrix();
@@ -68,7 +66,7 @@ function computeNE() {
     
     //Identify the largest payoff to player 2 in the ith row
     for (let j = 0; j < P2_STRATS; j++) {
-      if (p2PayArr[P2_STRATS*i + j] > largestT) largestT = p2PayArr[P2_STRATS*i + j];
+      if (p2PayArr[P2_STRATS*i + j] > largestT) largestT = Number(p2PayArr[P2_STRATS*i + j]);
     }
     
     //If a payoff is equal to the greatest in this row, mark it as a best response
@@ -83,7 +81,7 @@ function computeNE() {
     
     //Identify the largest payoff to player 1 in the jth column
     for (let i = 0; i < P1_STRATS; i++) {
-      if (p1PayArr[P2_STRATS*i + j] > largestS) largestS = p1PayArr[P2_STRATS*i + j];
+      if (p1PayArr[P2_STRATS*i + j] > largestS) largestS = Number(p1PayArr[P2_STRATS*i + j]);
     }
     
     //If a payoff is equal to the greatest in this column, mark it as a best response
