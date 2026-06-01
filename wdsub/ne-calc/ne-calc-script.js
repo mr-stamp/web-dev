@@ -1,4 +1,9 @@
 let queryParams = new URLSearchParams(window.location.search);
+/*
+* NOTE TO MY CLASSES: If your matrices are getting 10 times as many rows/columns as they should, it's because the following two constants are strings when we really want to treat them as numbers.
+* So when we use i < (P1_STRATS + 1) as the condition in our loop to build the matrix, it concatenates the constant and "1" instead of adding 1 to its numerical value.
+* To fix this, use the Number() constructor around the queryParams lines as shown below.
+*/
 const P1_STRATS = Number(queryParams.get("p1Strats"));
 const P2_STRATS = Number(queryParams.get("p2Strats"));
 
